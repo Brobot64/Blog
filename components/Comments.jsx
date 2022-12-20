@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import moment from 'moment'
 import parse from 'html-react-parser'
-import {getComments} from "../services"
+import { getComments } from "../services"
 import { comment } from "postcss"
 
 
 const Comments = ({ slug }) => {
   const [comments, setComments] = useState([]);
 
-  useEffect (() => {
+  useEffect(() => {
     getComments(slug)
-      .then((result) => setComments(result))
+      .then((result) => {
+        setComments(result);
+      });
   }, []);
   return (
     <>
