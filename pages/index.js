@@ -1,10 +1,9 @@
 import Head from 'next/head'
 import { PostCard, Categories, PostWidget } from '../components/'
-import { getPosts, getPostDetails } from '../services';
+import { getPosts } from '../services';
 import { FeaturedPosts } from '../sections'
 
 export default function Home({ posts }) {
-  console.log(process.env.GRAPHCMS_TOKEN)
   return (
     <div className="container mx-auto px-10 mb-8">
       <Head>
